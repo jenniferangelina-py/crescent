@@ -1,3 +1,4 @@
+var CircularJSON = require('circular-json');
 
 const express = require('express')
 const mysql = require('mysql');
@@ -8,7 +9,8 @@ const app = express()
 app.use(cors())
 const port = 3000
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const { response } = require('express');
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
@@ -63,26 +65,31 @@ app.listen(port, () => {
 })
 
 app.post('/signup', async (req,res) => {
-  // var username = await con.query(`SELECT * FROM user WHERE username = "${req.body.username}" and password = "${req.body.password}"`);
-  // console.log("username: " + JSON.stringify(username, null, `\t`));
-  con.query(`INSERT INTO user (email, username, password) VALUES ("${req.body.email}", "${req.body.username}", "${req.body.password}")`, function (err, result, fields) {
-    if (err) throw err;
-    
-    console.log(JSON.stringify(result, null, '\t'));
-    var response = {};
+  var response = {};
+  con.query(`SELECT * FROM user WHERE username = "${req.body.username}"`, function (err1, result1, fields1) {
 
-    if (result.length == 0) {
-      response.statusCode = 401;
-      response.username = null;
+    if (result1.length > 0) {
+      response.statusCode = 409;
+      response.message = "Username already exists.";
+      return res.send(response);
     }
 
-    if (result.length !== 0) {
-      response.statusCode = 200;
-      response.username = req.body.username;
-    }
-
-    res.send(response);
+    con.query(`INSERT INTO user (email, username, password) VALUES ("${req.body.email}", "${req.body.username}", "${req.body.password}")`, function (err, result, fields) {
+      if (err) throw err;
+      
+      console.log(JSON.stringify(result, null, '\t'));
+  
+      if (result.length == 0) {
+        response.statusCode = 401;
+        response.username = null;
+      }
+  
+      if (result.length !== 0) {
+        response.statusCode = 200;
+        response.username = req.body.username;
+      }
+  
+      res.send(response);
+    });
   });
-
-
 })

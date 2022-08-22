@@ -144,6 +144,11 @@ async function signup() {
                     writeCookie("login_username", response.username, 365);
 
                 }
+
+                if (response.statusCode == 409) {
+                    alert(response.message);
+                
+                }
         },
         error: function () {
                 console.log("error");
