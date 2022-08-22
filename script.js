@@ -41,6 +41,44 @@ function showMovies(data, genre) {
     }
 }
 
+async function login() {
+
+    var username = $("#login_username").val();
+    var password = $("#login_password").val();
+
+    showLoading();
+    hideLoginResult();
+
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/login",
+        headers: {
+            "accept": "application/json",
+            "Access-Control-Allow-Origin":"*"
+        },
+        data: {
+            username: username,
+            password: password
+        },
+        success: function (response) {
+            hideLoading();
+            console.log(response);
+            if (response.statusCode == 200) {
+                writeCookie("login_username", response.username, 365);
+                showValid();
+                location.reload();
+            }
+            if (response.statusCode == 401) {
+                showInvalid();
+            }
+        },
+        error: function () {
+            hideLoading();
+            console.log("error");
+        }
+    });
+}
+
 getMovies(ACTION_POPULARITY, "action");
 getMovies(ADVENTURE_POPULARITY, "adventure");
 getMovies(ANIMATION_POPULARITY, "animation");
@@ -50,3 +88,130 @@ getMovies(FANTASY_POPULARITY, "fantasy");
 getMovies(HISTORY_POPULARITY, "history");
 getMovies(ROMANCE_POPULARITY, "romance");
 getMovies(SCIENCEFICTION_POPULARITY, "sciencefiction");
+
+// bukan cara yang baik kata fel
+
+function writeCookie(name,value,days) {
+    var date, expires;
+    if (days) {
+        date = new Date();
+        date.setTime(date.getTime()+(days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+            }else{
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var i, c, ca, nameEQ = name + "=";
+    ca = document.cookie.split(';');
+    for(i=0;i < ca.length;i++) {
+        c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1,c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length,c.length);
+        }
+    }
+    return '';
+}
+
+async function signup() {
+    var email = $("#signup_email").val();
+    var username = $("#signup_username").val();
+    var password = $("#signup_password").val();
+    console.log(email);
+    console.log(username);
+    console.log(password);
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/signup",
+        headers: {
+            "accept": "application/json",
+            "Access-Control-Allow-Origin":"*"
+        },
+        data: {
+            email: email,
+            username: username,
+            password: password
+        },
+        success: function (response) {
+                console.log(response);
+                if (response.statusCode == 200) {
+                    alert("Signup berhasil.");
+                    writeCookie("login_username", response.username, 365);
+
+                }
+        },
+        error: function () {
+                console.log("error");
+        }
+    });
+}
+
+function showLoading() {
+    $("#btn_signin").hide();
+    $("#btn_loading").show();
+}
+
+function hideLoading() {
+    $("#btn_signin").show();
+    $("#btn_loading").hide();
+}
+
+hideLoading();
+
+function showInvalid() {
+    $("#invalid").show();
+}
+
+function showValid() {
+    $("#valid").show();
+}
+
+function hideLoginResult() {
+    $("#invalid").hide();
+    $("#valid").hide();
+}
+
+hideLoginResult();
+
+$("#login_username").keyup(function(event) {
+    if (event.keyCode === 13) {
+        login();
+    }
+});
+
+$("#login_password").keyup(function(event) {
+    if (event.keyCode === 13) {
+        login();
+    }
+});
+
+function hideSignupLogin() {
+    $("#btn_signup2").hide();
+    $("#btn_login2").hide();
+}
+
+console.log(readCookie("login_username"));
+
+if (readCookie("login_username") == null || readCookie("login_username") == "") {
+    hideLogout();
+} else {
+    hideSignupLogin();
+}
+
+function logout() {
+    eraseCookie("login_username");
+    location.reload();
+}
+
+function eraseCookie(name) {
+    document.cookie = name + '=; Max-Age=-99999999;';
+}
+
+function hideLogout() {
+    $("#btn_logout").hide();
+}

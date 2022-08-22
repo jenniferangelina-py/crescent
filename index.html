@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yeseva One">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
   </head>
   <body>
     <nav class="navbar">
       <div class="container-fluid nv">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-            <span class="c7C459C">C</span><span class="c9A6CB4">r</span><span class="cB690CB">e</span><span class="c9A6CB4">s</span><span class="c7C459C">c</span><span class="c9A6CB4">e</span><span class="cB690CB">n</span><span class="c9A6CB4">t</span>
+            <span onclick="connect()" class="c7C459C">C</span><span class="c9A6CB4">r</span><span class="cB690CB">e</span><span class="c9A6CB4">s</span><span class="c7C459C">c</span><span class="c9A6CB4">e</span><span class="cB690CB">n</span><span class="c9A6CB4">t</span>
           </a>
         </div>
         <ul class="nav navbar-nav">
@@ -28,63 +28,123 @@
             </form>
           </li>
           <li class="push">
-            <button class="btn">sign up</button>
+            <button id="btn_signup2" class="btn" data-toggle="modal" data-target="#signup">sign up</button>
           </li>
           <li class="pull">
-            <button class="btn">sign in</button>
+            <button id="btn_login2" class="btn" data-toggle="modal" data-target="#signin">sign in</button>
+          </li>
+          <li class="pull2">
+            <button id="btn_logout" class="btn" onclick="logout()">log out</button>
           </li>
         </ul>
       </div>
     </nav>
-    <p class="c7C459C ml">action</p>
+
+<!-- Modal -->
+<div id="signup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <p class="modal-title">sign up</h4>
+      </div>
+      <div class="modal-body">
+        <div class="white">
+          <input type="email" id="signup_email" class="form-control rounded mt" placeholder="email" spellcheck="false">
+          <input type="text" id="signup_username" class="form-control rounded mt" placeholder="username" spellcheck="false">
+          <input type="password" id="signup_password" class="form-control rounded" placeholder="password" spellcheck="false">
+          <button class="btn" onclick="signup()">sign up</button>
+          <p class="signupp">or sign in <a data-dismiss="modal" data-toggle="modal" href="#signin">here</a></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="signin" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <p class="modal-title">sign in</h4>
+      </div>
+      <div class="modal-body">
+        <div class="white2">
+          <input type="text" id="login_username" class="form-control rounded mt" placeholder="username" spellcheck="false">
+          <input type="password" id="login_password" class="form-control rounded" placeholder="password" spellcheck="false">
+          <button id="btn_signin" class="btn" onclick="login()">sign in</button>
+          <button id="btn_loading" class="btn" disabled><span class="glyphicon glyphicon-refresh spinning" style="margin-right: 10px;"></span>loading</button>
+          <p class="signinp">or sign up <a data-dismiss="modal" data-toggle="modal" href="#signup">here</a></p>
+          <p id="invalid">Invalid username or password.</p>
+          <p id="valid">Success.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <p class="c7C459C p2 ml">action</p>
     <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="action">
       </div>
     </div>
-    <p class="c7C459C ml">adventure</p>
+    <p class="c7C459C p2 ml">adventure</p>
     <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="adventure">
       </div>
     </div>
-  <p class="c7C459C ml">animation<p>
+  <p class="c7C459C p2 ml">animation<p>
   <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="animation">
       </div>
     </div>
-  <p class="c7C459C ml">comedy<p>
+  <p class="c7C459C p2 ml">comedy<p>
   <hr>
   <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="comedy">
       </div>
     </div>
-  <p class="c7C459C ml">drama<p>
+  <p class="c7C459C p2 ml">drama<p>
   <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="drama">
       </div>
     </div>
-  <p class="c7C459C ml">fantasy<p>
+  <p class="c7C459C p2 ml">fantasy<p>
   <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="fantasy">
       </div>
     </div>
-  <p class="c7C459C ml">history<p>
+  <p class="c7C459C p2 ml">history<p>
   <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="history">
       </div>
     </div>
-    <p class="c7C459C ml">romance</p>
+    <p class="c7C459C p2 ml">romance</p>
   <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="romance">
       </div>
     </div>
-  <p class="c7C459C ml">science fiction</p>
+  <p class="c7C459C p2 ml">science fiction</p>
   <hr>
     <div id="myCarousel" class="carousel slide">
       <div class="item container-fluid" id="sciencefiction">
@@ -94,5 +154,6 @@
       <div class="footer-copyright text-center">2022 copyright:<a class="c7C459C" href="#"> crescent.com</a></div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </body>
 </html>

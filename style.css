@@ -1,5 +1,7 @@
 body {
-  background-image: linear-gradient(to right, #FDE0F5, #D2E0F6);;
+  background-image: linear-gradient(to right, #fde0f7, #F0E7F8, #e3edf9);
+  padding-right: 0px !important;
+  overflow: auto !important;
 }
 
 .nv {
@@ -111,7 +113,7 @@ img {
   margin-left: 30px;
 }
 
-p {
+.p2 {
   font-family: "Playfair Display";
   font-size: 20px;
   margin-top: 10px;
@@ -134,4 +136,116 @@ hr {
   width: 1840.5px;
   box-shadow: 0 0 5px 0 #965DB7;
   margin-left: 30.1px;
+}
+
+.modal-header, .modal-footer {
+  background: #F2ECF6;
+}
+
+.modal-body {
+  background-image: linear-gradient(to right, #FDE0F5, #D2E0F6) !important;
+}
+
+.white {
+  height: 210px;
+  width: 300px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.white2 {
+  height: 195px;
+  width: 300px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.white > input, .white > input:focus, .white2 > input, .white2 > input:focus {
+  display: inline-block;
+  width: 250px;
+  margin-left: 10px;
+  margin-top: 10px;
+  box-shadow: none;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  font-family: "Epilogue";
+}
+
+.white > button, .white2 > button {
+  margin: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 250px;
+  font-family: "Epilogue";
+  background-image: linear-gradient(to right, #f55fd6, #70a6e2) !important;
+  border: none !important;
+  outline: none;
+  height: 35px;
+}
+
+.white .signinp, .white2 .signinp {
+  font-family: "Epilogue";
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  top: 170px;
+}
+
+.signupp {
+  font-family: "Epilogue";
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  top: 215px;
+}
+
+.modal-content {
+  width: 300px;
+  margin: auto;
+}
+
+.modal-title {
+  font-size: 15px;
+  color: #7C459C;
+  font-family: "Epilogue";
+}
+
+.modal-footer {
+  font-family: "Epilogue";
+}
+
+.glyphicon.spinning {
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+#invalid {
+  color: red;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  top: 200px;
+}
+
+#valid {
+  color: green;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  top: 200px;
 }
