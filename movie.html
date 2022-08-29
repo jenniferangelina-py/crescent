@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crescent</title>
+    <link rel="icon" href="https://img.freepik.com/free-vector/aesthetic-dreamy-background-purple-cloudy-sky-vector-glitter-design_53876-156334.jpg?w=1380&t=st=1659440275~exp=1659440875~hmac=f65730add32a9a35c833102370ac4ce92d4a844bf03a8e83325a4fcaaed828c1" type="image/gif">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yeseva One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid nv">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <span onclick="connect()" class="c7C459C">C</span><span class="c9A6CB4">r</span><span class="cB690CB">e</span><span class="c9A6CB4">s</span><span class="c7C459C">c</span><span class="c9A6CB4">e</span><span class="cB690CB">n</span><span class="c9A6CB4">t</span>
+          </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active1"><a class="c7C459C" href="#">home</a></li>
+          <li><a class="c7C459C" href="series.html">series</a></li>
+          <li><a class="c7C459C" href="movies.html">movies</a></li>
+          <li class="vertical-align-middle">
+            <form>
+              <input type="search" class="form-control rounded" placeholder="search">
+            </form>
+          </li>
+          <li class="push">
+            <button id="btn_signup2" class="btn" data-toggle="modal" data-target="#signup">sign up</button>
+          </li>
+          <li class="pull">
+            <button id="btn_login2" class="btn" data-toggle="modal" data-target="#signin">sign in</button>
+          </li>
+          <li class="pull2">
+            <button id="btn_logout" class="btn" onclick="logout()">log out</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<!-- Modal -->
+<div id="signup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <p class="modal-title">sign up</h4>
+      </div>
+      <div class="modal-body">
+        <div class="white">
+          <input type="email" id="signup_email" class="form-control rounded mt" placeholder="email" spellcheck="false">
+          <input type="text" id="signup_username" class="form-control rounded mt" placeholder="username" spellcheck="false">
+          <input type="password" id="signup_password" class="form-control rounded" placeholder="password" spellcheck="false">
+          <button class="btn" onclick="signup()">sign up</button>
+          <p class="signupp">or sign in <a data-dismiss="modal" data-toggle="modal" href="#signin">here</a></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="signin" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <p class="modal-title">sign in</h4>
+      </div>
+      <div class="modal-body">
+        <div class="white2">
+          <input type="text" id="login_username" class="form-control rounded mt" placeholder="username" spellcheck="false">
+          <input type="password" id="login_password" class="form-control rounded" placeholder="password" spellcheck="false">
+          <button id="btn_signin" class="btn" onclick="login()">sign in</button>
+          <button id="btn_loading" class="btn" disabled><span class="glyphicon glyphicon-refresh spinning" style="margin-right: 10px;"></span>loading</button>
+          <p class="signinp">or sign up <a data-dismiss="modal" data-toggle="modal" href="#signup">here</a></p>
+          <p id="invalid">Invalid username or password.</p>
+          <p id="valid">Success.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="page-footer epilogue">
+      <div class="footer-copyright text-center">2022 copyright:<a class="c7C459C" href="#"> crescent.com</a></div>
+    </footer>
+    <script src="movie_detail.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -36,7 +36,7 @@ function showMovies(data, genre) {
     var sub_item = "";
     var genre = $(`#${genre}`);
     for (i = 0; i < data.length - 10; i++) {
-        sub_item = `<div class="sub-item"><img src="${IMG_URL + data[i].poster_path}"></div>`;
+        sub_item = `<a href="movie.html?id=${data[i].id}"><div class="sub-item"><img src="${IMG_URL + data[i].poster_path}"></div></a>`;
         genre.append(sub_item);
     }
 }
