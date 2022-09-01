@@ -298,8 +298,18 @@ hr {
 .castdiv {
   display: inline-block;
   width: 161.5px;
-  height: 400px;
+  height: 325px;
+  margin-bottom: 15px;
   /* text-align: center; */
   vertical-align: middle;
   margin-right: 50px;
+}
+
+.cast {
+  text-align: center;
+}
+
+.setara {
+  margin-left: 120px;
+  font-size: 18px;
 }

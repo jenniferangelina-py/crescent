@@ -57,8 +57,9 @@ async function getMovieCredits(id) {
   var cast = $("#cast");
   var castnames = $("#castnames");
   for (i = 0; i < data.cast.length; i++) {
+    var image = data.cast[i].profile_path !== null ? IMG_URL + data.cast[i].profile_path : "public/anonim.png";
     if (data.cast[i].known_for_department == "Acting") {
-      sub_item = `<div class="castdiv"><img class="castimg" src="${IMG_URL + data.cast[i].profile_path}"><p>${data.cast[i].name} as ${data.cast[i].character}</p></div>`;
+      sub_item = `<div class="castdiv"><img class="castimg" src="${image}"><p>${data.cast[i].name} as ${data.cast[i].character}</p></div>`;
       cast.append(sub_item);
     }
   }
@@ -66,7 +67,7 @@ async function getMovieCredits(id) {
 
 // https://api.themoviedb.org/3/movie/616037?api_key=9f2832d7fe5339ef6d5818b58c015723
 // https://api.themoviedb.org/3/movie/616037/similar?api_key=9f2832d7fe5339ef6d5818b58c015723
-// https://api.themoviedb.org/3/movie/155226/credits?api_key=9f2832d7fe5339ef6d5818b58c015723
+// https://api.themoviedb.org/3/movie/616037/credits?api_key=9f2832d7fe5339ef6d5818b58c015723
 
 var url = window.location.href;
 var new_url = new URL(url);
