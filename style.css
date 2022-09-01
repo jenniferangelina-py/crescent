@@ -249,3 +249,54 @@ hr {
   transform: translate(-50%, -50%);
   top: 200px;
 }
+
+.genres {
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.picture {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.wid {
+  width: 50%;
+  margin: auto;
+}
+
+.overview {
+  color: #663981;
+  margin-bottom: 20px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.wordspacing {
+  word-spacing: 8px !important;
+}
+
+.title {
+  font-size: 25px;
+}
+
+.castimg {
+  height: 242.25px;
+  width: 161.5px;
+  margin-bottom: 10px;
+}
+
+.castdiv {
+  display: inline-block;
+  width: 175px;
+  height: 300px;
+  /* text-align: center; */
+  margin-right: 50px;
+}

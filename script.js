@@ -87,7 +87,7 @@ getMovies(DRAMA_POPULARITY, "drama");
 getMovies(FANTASY_POPULARITY, "fantasy");
 getMovies(HISTORY_POPULARITY, "history");
 getMovies(ROMANCE_POPULARITY, "romance");
-getMovies(SCIENCEFICTION_POPULARITY, "sciencefiction");
+getMovies(SCIENCEFICTION_POPULARITY, "science-fiction");
 
 // bukan cara yang baik kata fel
 
