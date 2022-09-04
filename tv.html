@@ -20,19 +20,19 @@
         </div>
         <ul class="nav navbar-nav">
           <li><a class="c7C459C" href="index.html">movies</a></li>
-          <li class="active1"><a class="c7C459C" href="#">series</a></li>
+          <li><a class="c7C459C" href="tv.html">series</a></li>
           <li class="vertical-align-middle">
-              <input type="search" class="form-control rounded" placeholder="search" id="search">
-            </li>
-            <li class="push">
-              <button id="btn_signup2" class="btn signupbtn" data-toggle="modal" data-target="#signup">sign up</button>
-            </li>
-            <li class="pull">
-              <button id="btn_login2" class="btn signinbtn" data-toggle="modal" data-target="#signin">sign in</button>
-            </li>
-            <li class="pull2">
-              <button id="btn_logout" class="btn" onclick="logout()">log out</button>
-            </li>
+            <input type="search" class="form-control rounded" placeholder="search" id="search">
+          </li>
+          <li class="push">
+            <button id="btn_signup2" class="btn signupbtn" data-toggle="modal" data-target="#signup">sign up</button>
+          </li>
+          <li class="pull">
+            <button id="btn_login2" class="btn signinbtn" data-toggle="modal" data-target="#signin">sign in</button>
+          </li>
+          <li class="pull2">
+            <button id="btn_logout" class="btn" onclick="logout()">log out</button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -93,46 +93,31 @@
   </div>
 </div>
 
-  <p class="c7C459C p2 ml">animation<p>
-  <hr>
-    <div id="myCarousel" class="carousel slide">
-      <div class="item container-fluid" id="animation">
-      </div>
-    </div>
-  <p class="c7C459C p2 ml">comedy<p>
-  <hr>
+<div class="center">
+  <p id="title" class="c7C459C p2 ml title"></p>
+  <img id="image" class="picture ml" src="fel.png"></img>
+  <p id="rating" class="rating"></p>
+  <p id="genres" class="c7C459C epilogue genres ml bold wordspacing"></p>
+  <p id="overview" class="c7C459C epilogue genres ml wid overview"></p>
+</div>
+
+<div>
+  <div class="c7C459C epilogue genres ml bold setara"><p>CAST</p></div>
+  <div class="c7C459C epilogue genres ml cast" id="cast"></div>
+</div>
+
+<div>
   <div id="myCarousel" class="carousel slide">
-      <div class="item container-fluid" id="comedy">
-      </div>
+    <p  class="c7C459C epilogue genres ml bold">similar series</p>
+    <div class="item container-fluid" id="relatedMovies">
     </div>
-  <p class="c7C459C p2 ml">drama<p>
-  <hr>
-    <div id="myCarousel" class="carousel slide">
-      <div class="item container-fluid" id="drama">
-      </div>
     </div>
-  <p class="c7C459C p2 ml">history<p>
-  <hr>
-    <div id="myCarousel" class="carousel slide">
-      <div class="item container-fluid" id="history">
-      </div>
-    </div>
-    <p class="c7C459C p2 ml">romance</p>
-  <hr>
-    <div id="myCarousel" class="carousel slide">
-      <div class="item container-fluid" id="romance">
-      </div>
-    </div>
-  <p class="c7C459C p2 ml">science fiction</p>
-  <hr>
-    <div id="myCarousel" class="carousel slide">
-      <div class="item container-fluid" id="sciencefiction">
-      </div>
-    </div>
-    <footer class="page-footer epilogue">
-      <div class="footer-copyright text-center">2022 copyright:<a class="c7C459C" href="#"> crescent.com</a></div>
-    </footer>
-    <script src="script2.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</div>
+
+  <footer class="page-footer epilogue">
+    <div class="footer-copyright text-center">2022 copyright:<a class="c7C459C" href="#"> crescent.com</a></div>
+  </footer>
+  <script src="movie_detail2.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </body>
 </html>

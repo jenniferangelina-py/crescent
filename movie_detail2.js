@@ -2,17 +2,15 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 const API_KEY = "api_key=9f2832d7fe5339ef6d5818b58c015723";
 
-const PG13 = "certification_country=US&certification=PG-13&"
-
 const IMG_URL = "https://image.tmdb.org/t/p/original";
 
 async function getMovie(id) {
-    var url = `${BASE_URL}/movie/${id}?${API_KEY}`;
+    var url = `${BASE_URL}/tv/${id}?${API_KEY}`;
     console.log(url);
     const res = await fetch(url);
     const data = await res.json();
     
-    var title = `${data.title}`;
+    var title = `${data.name}`;
     $("#title").text(title);
 
     var genres = "";
@@ -37,15 +35,15 @@ async function getMovie(id) {
   }
 
 async function getRelatedMovies(id) {
-  var url = `${BASE_URL}/movie/${id}/similar?${PG13}${API_KEY}`;
+  var url = `${BASE_URL}/tv/${id}/recommendations?${API_KEY}`;
   console.log(url);
   const res = await fetch(url);
   const data = await res.json();
 
   var sub_item = "";
   var relatedMovies = $("#relatedMovies");
-  for (i = 0; i < data.results.length - 10; i++) {
-    sub_item = `<a href="movie.html?id=${data.results[i].id}"><div class="sub-item"><img src="${IMG_URL + data.results[i].poster_path}"></div></a>`;
+  for (i = 0; i < data.results.length - 11; i++) {
+    sub_item = `<a href="tv.html?id=${data.results[i].id}"><div class="sub-item"><img src="${IMG_URL + data.results[i].poster_path}"></div></a>`;
     relatedMovies.append(sub_item);
   }
 
@@ -53,7 +51,7 @@ async function getRelatedMovies(id) {
 }
 
 async function getMovieCredits(id) {
-  var url = `${BASE_URL}/movie/${id}/credits?${API_KEY}`;
+  var url = `${BASE_URL}/tv/${id}/credits?${API_KEY}`;
   console.log(url);
   const res = await fetch(url);
   const data = await res.json();

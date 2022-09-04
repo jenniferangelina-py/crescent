@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
 body {
-  background-image: linear-gradient(to right, #fde0f7, #F0E7F8, #e3edf9);
+  background-image: url("https://img.freepik.com/free-vector/pastel-ombre-background-pink-purple_53876-120750.jpg?w=1380&t=st=1662289284~exp=1662289884~hmac=7770d6a03f7daa4db8ced726457abad1570fbc750cd12c12a4bc09645e368526");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-right: 0px !important;
   overflow: auto !important;
 }
@@ -11,8 +15,6 @@ body {
 .navbar-brand, .navbar-brand:focus, .navbar-brand:active, .navbar-brand:hover {
   font-family: "Yeseva One";
   background: #F2ECF6 !important;
-  text-shadow: 
-  2px 2px white;
   cursor: default;
 }
 
@@ -55,7 +57,7 @@ li, .epilogue {
 }
 
 .push {
-  margin-left:  1185px;
+  margin-left:  1200px;
   margin-right: 10px;
 }
 
@@ -114,12 +116,10 @@ img {
 }
 
 .p2 {
-  font-family: "Playfair Display";
+  font-family: "Yeseva One";
   font-size: 20px;
   margin-top: 10px;
-  text-shadow: 
-    0 0 10px #A37CB9,
-    0 0 20px #CAB4D7;
+  color: #6E3D8A;
 }
 
 .footer-copyright {
@@ -288,8 +288,8 @@ hr {
 }
 
 .castimg {
-  height: 242.25px;
-  width: 161.5px;
+  height: 121.125px;
+  width: 80.75px;
   margin-bottom: 10px;
   text-align: center;
   /* vertical-align: center; */
@@ -297,12 +297,12 @@ hr {
 
 .castdiv {
   display: inline-block;
-  width: 161.5px;
-  height: 325px;
+  width: 121.125px;
+  height: 250px;
   margin-bottom: 15px;
   /* text-align: center; */
   vertical-align: middle;
-  margin-right: 50px;
+  margin-right: 5px;
 }
 
 .cast {
@@ -310,6 +310,26 @@ hr {
 }
 
 .setara {
-  margin-left: 120px;
+  text-align: center;
+}
+
+.rating {
+  font-family: "Epilogue";
   font-size: 18px;
+}
+
+.smallfont {
+  font-size: 13px;
+}
+
+.signupbtn {
+  position: absolute;
+  left: 50px;
+  top: -17.5px;
+}
+
+.signinbtn {
+  position: absolute;
+  left: 125px;
+  top: -17.5px;
 }

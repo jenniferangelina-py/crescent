@@ -2,17 +2,17 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 // https://api.themoviedb.org/3/discover/movie?with_genres=28&/discover/movie?sort_by=popularity.desc&api_key=9f2832d7fe5339ef6d5818b58c015723
 
-const ACTION = "/discover/movie?with_genres=28&";
-const ADVENTURE = "/discover/movie?with_genres=12&";
-const ANIMATION = "/discover/movie?with_genres=16&";
-const COMEDY = "/discover/movie?with_genres=35&";
-const DRAMA = "/discover/movie?with_genres=18&";
-const FANTASY = "/discover/movie?with_genres=14&";
-const HISTORY = "/discover/movie?with_genres=36&";
-const ROMANCE = "/discover/movie?with_genres=10749&";
+const ACTION = "/discover/tv?with_genres=28&";
+const ADVENTURE = "/discover/tv?with_genres=12&";
+const ANIMATION = "/discover/tv?with_genres=16&";
+const COMEDY = "/discover/tv?with_genres=35&";
+const DRAMA = "/discover/tv?with_genres=18&";
+const FANTASY = "/discover/tv?with_genres=14&";
+const HISTORY = "/discover/tv?with_genres=36&";
+const ROMANCE = "/discover/tv?with_genres=10749&";
 const SCIENCE_FICTION = "/discover/movie?with_genres=878&";
 
-const POPULARITY = "/discover/movie?sort_by=popularity.desc&";
+const POPULARITY = "/discover/tv?sort_by=popularity.desc&";
 
 const PG13 = "certification_country=US&certification=PG-13&"
 
@@ -40,7 +40,7 @@ function showMovies(data, genre) {
     var sub_item = "";
     var genre = $(`#${genre}`);
     for (i = 0; i < data.length - 10; i++) {
-        sub_item = `<a href="movie.html?id=${data[i].id}"><div class="sub-item"><img src="${IMG_URL + data[i].poster_path}"></div></a>`;
+        sub_item = `<a href="tv.html?id=${data[i].id}"><div class="sub-item"><img src="${IMG_URL + data[i].poster_path}"></div></a>`;
         genre.append(sub_item);
     }
 }
