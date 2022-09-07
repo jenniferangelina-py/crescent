@@ -39,8 +39,15 @@ async function getMovies(url, genre) {
 function showMovies(data, genre) {
     var sub_item = "";
     var genre = $(`#${genre}`);
+
     for (i = 0; i < data.length - 10; i++) {
-        sub_item = `<a href="movie.html?id=${data[i].id}"><div class="sub-item"><img src="${IMG_URL + data[i].poster_path}"></div></a>`;
+
+        var movie = new Movie(data[i].id, data[i].poster_path, data[i].title);
+
+        var movieDetails = new MovieDetails(data[i].id, data[i].poster_path, data[i].title);
+        console.log(movieDetails.id);
+
+        sub_item = `<a href="movie.html?id=${movie.id}"><div class="sub-item"><img src="${IMG_URL + movie.poster_path}"></div></a>`;
         genre.append(sub_item);
     }
 }
